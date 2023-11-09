@@ -15,19 +15,15 @@ const LoginForm = () => {
         username,
         password,
       });
-      // Save the token to localStorage
       localStorage.setItem('token', response.data.token);
-      // Redirect to FriendsList route
       navigate('/friends');
     } catch (error) {
       console.error('Login failed:', error.response ? error.response.data : error.message);
-      // Optionally handle login failure by updating the state and showing a message to the user
     }
   };
 
   return (
     <div className="login-wrapper">
-     {/* // <div className="login-header">FRIENDS DATABASE</div> */}
       <form onSubmit={handleLogin} className="login-form">
         <h2>LOGIN</h2>
         <div>
